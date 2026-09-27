@@ -4,6 +4,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "HeartEcho",
   description: "A Friend that helps you calm down",
+  icons:{
+
+    icon: "/favicon.ico",
+  }
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -4,10 +4,14 @@ import {parseArduinoMessage} from "../lib/parse";
 
 export default function HeartEcho() {
   const [isCalming, setIsCalming] = useState(0);
+
+  //handling the messages received from the arduino and parsing them using the parseArduinoMessage function
     const handleMessage = (message: string) => {
        const parsedMessage = parseArduinoMessage(message);
        if (parsedMessage) {
         console.log("Parsed message:", parsedMessage);
+       }else{
+        return
        }
     }
 
@@ -21,12 +25,7 @@ export default function HeartEcho() {
         <button
           className="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-2 px-4 rounded"
           onClick={() => {
-              console.log(parseArduinoMessage("BPM:75"));
-              console.log(parseArduinoMessage("BEAT\r"));
-              console.log(parseArduinoMessage("NOFINGER"));
-              console.log(parseArduinoMessage("M:72"));
-              console.log(parseArduinoMessage("BPM:"));
-              console.log(parseArduinoMessage("hello"));
+            handleMessage("BPM:72");
         }}
         >
           Calm Down
