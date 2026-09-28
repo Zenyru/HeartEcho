@@ -3,7 +3,6 @@ export type ArduinoMessage =
   | { type: "bpm"; bpm: number }
   | { type: "noFinger" }
   | { type: "beat" };
-f
 
 //defining the type of signal messages of the arduino to the host machine
 export type signalMessage = "waiting" | "good" | "unsteady" | "noFinger";
